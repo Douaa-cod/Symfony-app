@@ -1,3 +1,11 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /home
+    controller: App\Controller\HomeController::index
+    
+firstPage:
+    path: /firstPage
+    controller: App\Controller\FirstPageController::index.
+
+redirectTo:
+    path: /hello
+    controller: App\Controller\HomeController::hello
