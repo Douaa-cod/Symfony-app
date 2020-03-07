@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <!-- Latest compiled and minified CSS -->
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            {% block body %}{% endblock %}
+            <h1>Page with return array</h1>
+            <div>
+                <h3>{{title|upper}}</h3>
+                <ul>
+                {# list of user : parcpir de tableau "array" #}
+                {% for item in array  %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% block javascripts %}{% endblock %}
+        </div>
+    </body>
+</html>
