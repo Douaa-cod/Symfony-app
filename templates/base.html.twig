@@ -5,8 +5,15 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body> 
+        {% block body %}
+           <div> ****** HI ****** </div>
+           <div>
+            <a href={{ path('helloName',{'name':'ahmed'}) }}>Hello Ahmed</a>
+            <a href={{ path('helloName',{'name':'douaa'}) }}>Hello Douaa</a>
+           </div>
+        {% endblock %}
+        
         {% block javascripts %}{% endblock %}
     </body>
 </html>
