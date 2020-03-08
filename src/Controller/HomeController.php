@@ -4,7 +4,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Psr\Log\LoggerInterface;
+use App\Service\Greeter;
 /** 
  * @Route("first/");
  */
@@ -79,6 +80,18 @@ class HomeController extends AbstractController
         $local= $request->getLocale();
         return new Response('hello, local '.$local);
     }
+    /** 
+     * @Route("hellolog");
+     */
+/*     function hellolog(LoggerInterface $logger){
+        $logger->alert('logger !');
+        return $this->render('hello.html.twig');
+    } */
+    function hellolog (Greeter $greeter){
+        $message = $greeter->greet();
+        return new Response($message);
+    }
+
 
 }
 

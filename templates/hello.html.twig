@@ -19,12 +19,12 @@
             {% block body %}{% endblock %}
             <h1>Page with return array</h1>
             <div>
-                <h3>{{title|upper}}</h3>
+{#                 <h3>{{title|upper}}</h3> #}
                 <ul>
                 {# list of user : parcpir de tableau "array" #}
-                {% for item in array  %}
+{#                 {% for item in array  %}
                     <li>{{ item }}</li>
-                {% endfor %}
+                {% endfor %} #}
                 </ul>
             </div>
             {% block javascripts %}{% endblock %}

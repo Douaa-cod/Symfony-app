@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request; 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Form\UserType;
 
 
 class UserController extends AbstractController
@@ -17,14 +18,11 @@ class UserController extends AbstractController
      */
     public function createUserForm(Request $request)
     {
-        // creates a task object and initializes some data for this example
+        // create a task object and initializes some data for this example
         $user = new User();
 
-        $form = $this->createFormBuilder($user)
-            ->add('name', TextType::class)
-            ->add('email', EmailType::class)
-            ->add('save', SubmitType::class)
-            ->getForm();
+        // applay to form created in UserType.php       
+        $form = $this->createForm(UserType::class, $user);
         
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()){
